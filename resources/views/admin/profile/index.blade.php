@@ -16,9 +16,16 @@
                     <h4>Update User Information</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.profile.update') }}" method="POST">
+                    <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <div class="form-group">
+                            <div id="image-preview" class="image-preview">
+                                <label for="image-upload" id="image-label">Choose File</label>
+                                <input type="file" name="avatar" id="image-upload">
+                                <input type="hidden" name="old_avatar" value="{{ auth()->user()->avatar }}">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" name="name" value="{{ auth()->user()->name }}" class="form-control">
@@ -60,3 +67,29 @@
         </div>
     </section>
 @endsection
+
+@push('admin-js')
+    <!-- image-preview js -->
+    <script src="{{ asset('admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
+    <script>
+        $.uploadPreview({
+            input_field: "#image-upload", // Default: .image-upload
+            preview_box: "#image-preview", // Default: .image-preview
+            label_field: "#image-label", // Default: .image-label
+            label_default: "Choose File", // Default: Choose File
+            label_selected: "Change File", // Default: Change File
+            no_label: false, // Default: false
+            success_callback: null // Default: null
+        });
+    </script>
+    <!-- show image -->
+    <script>
+        $(document).ready(function() {
+            $('.image-preview').css({
+                'background-image': 'url({{ asset(auth()->user()->avatar) }})',
+                'background-size': 'cover',
+                'background-position': 'center center'
+            })
+        })
+    </script>
+@endpush

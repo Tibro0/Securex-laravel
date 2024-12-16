@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class ProfileController extends Controller
 {
@@ -15,17 +17,35 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request){
         $request->validate([
+            'avatar' => ['nullable', 'image', 'max:2000'],
             'name' => ['required', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email,'.Auth::user()->id],
         ]);
 
-        $user = Auth::user();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->save();
+        $oldImage = $request->old_avatar;
+        if ($request->file('avatar')) {
+            $image = $request->file('avatar');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img = $img->resize(500,500);
+            $img->toJpeg(80)->save(base_path('public/uploads/profile_image/'.$name_gen));
+            $save_url = 'uploads/profile_image/'.$name_gen;
 
-        toastr()->success('Updated Successfully');
-        return redirect()->back();
+            $user = Auth::user();
+            $user->avatar = $save_url;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->save();
+
+            if (file_exists($oldImage)) {
+                unlink($oldImage);
+            }
+
+            toastr()->success('Updated Successfully');
+            return redirect()->back();
+        }
+
     }
 
     public function updatePassword(Request $request){
