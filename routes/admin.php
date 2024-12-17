@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
@@ -15,3 +16,6 @@ Route::put('profile/password', [ProfileController::class, 'updatePassword'])->na
 
 /** slider route */
 Route::resource('slider', SliderController::class);
+
+/** detail route */
+Route::resource('detail', DetailController::class);

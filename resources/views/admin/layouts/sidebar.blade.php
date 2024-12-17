@@ -18,6 +18,7 @@
                     <span>Homepage Content</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.slider.index') }}">Slider</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.detail.index') }}">Details</a></li>
                 </ul>
             </li>
 

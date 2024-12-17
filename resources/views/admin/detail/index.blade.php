@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @push('admin-css')
-    <title>Admin | Slider</title>
+    <title>Admin | Details</title>
     <!-- dataTables css -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/dataTables-bootstrap4.css') }}">
 @endpush
@@ -9,14 +9,14 @@
 @section('admin-content')
     <section class="section">
         <div class="section-header">
-            <h1>Slider</h1>
+            <h1>Details</h1>
         </div>
 
         <div class="card card-primary">
             <div class="card-header">
-                <h4>All Sliders</h4>
+                <h4>All Details</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('admin.slider.create') }}" class="btn btn-primary">Create new</a>
+                    <a href="{{ route('admin.detail.create') }}" class="btn btn-primary">Create new</a>
                 </div>
             </div>
             <div class="card-body">
