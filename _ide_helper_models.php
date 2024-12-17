@@ -15,6 +15,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider query()
+ */
+	class Slider extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $avatar
  * @property string $name

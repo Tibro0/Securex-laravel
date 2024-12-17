@@ -9,10 +9,19 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
 
-            <li class="active"><a class="nav-link" href="index-0.html"><i class="fas fa-fire"></i> General Dashboard</a>
+            <li class="active"><a class="nav-link" href="index-0.html"><i class="fas fa-fire"></i> Dashboard</a>
             </li>
 
             <li class="menu-header">Starter</li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Homepage Content</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.slider.index') }}">Slider</a></li>
+                </ul>
+            </li>
+
+
             {{-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Layout</span></a>
