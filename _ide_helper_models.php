@@ -15,9 +15,34 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs query()
+ */
+	class AboutUs extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $image
+ * @property string $title
+ * @property string $description
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereUpdatedAt($value)
  */
 	class Detail extends \Eloquent {}
 }

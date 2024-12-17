@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -19,3 +20,8 @@ Route::resource('slider', SliderController::class);
 
 /** detail route */
 Route::resource('detail', DetailController::class);
+
+/** About Us route */
+Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
+Route::put('about-us/part-one/update', [AboutUsController::class, 'aboutUsPartOneUpdate'])->name('about-us.part-one-update');
+Route::put('about-us/part-two/update', [AboutUsController::class, 'aboutUsPartTwoUpdate'])->name('about-us.part-two-update');

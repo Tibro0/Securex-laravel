@@ -19,6 +19,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.slider.index') }}">Slider</a></li>
                     <li><a class="nav-link" href="{{ route('admin.detail.index') }}">Details</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.about-us.index') }}">About Us</a></li>
                 </ul>
             </li>
 
