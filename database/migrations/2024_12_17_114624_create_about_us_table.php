@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
-            $table->text('value')->nullable();
+            $table->string('right_main_image')->nullable();
+            $table->string('left_title')->nullable();
+            $table->string('left_description')->nullable();
+            $table->string('left_icon_first_image')->nullable();
+            $table->string('left_icon_first_number')->nullable();
+            $table->string('left_icon_first_title')->nullable();
+            $table->string('left_icon_second_image')->nullable();
+            $table->string('left_icon_second_number')->nullable();
+            $table->string('left_icon_second_title')->nullable();
+            $table->string('left_button_title')->nullable();
+            $table->string('left_button_url')->nullable();
             $table->timestamps();
         });
     }

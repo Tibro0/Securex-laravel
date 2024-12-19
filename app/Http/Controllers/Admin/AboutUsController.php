@@ -15,106 +15,126 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $aboutUs = AboutUs::pluck('value', 'key');
+        $aboutUs = AboutUs::all()->toArray();
         return view('admin.about-us.index', compact('aboutUs'));
     }
-    public function aboutUsPartOneUpdate(Request $request){
-        $validateData = $request->validate([
-            'about_us_part_one_image' => ['nullable', 'image', 'max:2000']
+
+    public function aboutUsUpdate(Request $request){
+        $request->validate([
+            'right_main_image' => ['nullable', 'image', 'max:2000'],
+            'left_title' => ['required', 'max:255'],
+            'left_description' => ['required', 'max:255'],
+            'left_icon_first_image' => ['nullable', 'image', 'max:2000'],
+            'left_icon_first_number' => ['required', 'max:255'],
+            'left_icon_first_title' => ['required', 'max:255'],
+            'left_icon_second_image' => ['nullable', 'image', 'max:2000'],
+            'left_icon_second_number' => ['required', 'max:255'],
+            'left_icon_second_title' => ['required', 'max:255'],
+            'left_button_title' => ['required', 'max:255'],
+            'left_button_url' => ['required', 'url', 'max:255'],
         ]);
 
-        $oldImage = $request->part_one_old_image;
-        if ($request->file('about_us_part_one_image')) {
-            $image = $request->file('about_us_part_one_image');
+        $old_right_main_image = $request->old_right_main_image;
+        if ($request->file('right_main_image')) {
+            $image = $request->file('right_main_image');
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(800,800);
+            $img = $img->resize(946,560);
             $img->toJpeg(80)->save(base_path('public/uploads/about-us/'.$name_gen));
-            $save_url = 'uploads/about-us/'.$name_gen;
+            $save_url_right_main_image = 'uploads/about-us/'.$name_gen;
 
-            if (file_exists($oldImage)) {
-                unlink($oldImage);
+            if (file_exists($old_right_main_image)) {
+                unlink($old_right_main_image);
             }
 
-            foreach ($validateData as $key => $value) {
-                AboutUs::updateOrCreate(
-                    ['key' => $key],
-                    ['value' => $save_url],
-                );
-            }
-        }
-
-        toastr()->success('Updated Successfully');
-        return redirect()->back();
-    }
-
-    public function aboutUsPartTwoUpdate(Request $request){
-        $validateData = $request->validate([
-            'about_us_part_two_title' => ['required'],
-            'about_us_part_two_description' => ['required'],
-            'about_us_part_two_button_text' => ['required'],
-            'about_us_part_two_button_url' => ['required', 'url'],
-        ],[
-            'about_us_part_two_title.required' => 'Title field is required.',
-            'about_us_part_two_description.required' => 'Description field is required.',
-            'about_us_part_two_button_text.required' => 'Button Text field is required.',
-            'about_us_part_two_button_url.required' => 'Button Url field is required.',
-            'about_us_part_two_button_url.url' => 'Button Url must be a valid url.',
-        ]);
-
-        foreach ($validateData as $key => $value) {
             AboutUs::updateOrCreate(
-                ['key' => $key],
-                ['value' => $value],
+                ['id' => 1],
+                [
+                    'right_main_image' => $save_url_right_main_image,
+                    'left_title' => $request->left_title,
+                    'left_description' => $request->left_description,
+                    'left_icon_first_number' => $request->left_icon_first_number,
+                    'left_icon_first_title' => $request->left_icon_first_title,
+                    'left_icon_second_number' => $request->left_icon_second_number,
+                    'left_icon_second_title' => $request->left_icon_second_title,
+                    'left_button_title' => $request->left_button_title,
+                    'left_button_url' => $request->left_button_url,
+                ]
             );
+
+            toastr('Updated Successfully!');
+            return redirect()->back();
         }
 
-        toastr()->success('Updated Successfully!');
-        return redirect()->back();
-    }
 
-    public function aboutUsPartThreeSectionOneUpdate(Request $request){
-        $validateData = $request->validate([
-            'about_us_part_three_icon_first_image' => ['nullable', 'image', 'max:2000'],
-            'about_us_part_three_icon_first_number' => ['required'],
-            'about_us_part_three_icon_first_title' => ['required', ],
-        ],[
-            'about_us_part_three_icon_first_image.image' => 'First Icon Image must be a image',
-            'about_us_part_three_icon_first_number.required' => 'First Number field is required.',
-            'about_us_part_three_icon_first_title.required' => 'First Title field is required.',
-        ]);
-
-        $oldImage = $request->old_about_us_part_three_icon_first_image;
-        if ($request->file('about_us_part_three_icon_first_image')) {
-            $image = $request->file('about_us_part_three_icon_first_image');
+        $old_left_icon_first_image = $request->old_left_icon_first_image;
+        if ($request->file('left_icon_first_image')) {
+            $image = $request->file('left_icon_first_image');
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img = $img->resize(800,800);
+            $img = $img->resize(64,64);
             $img->toJpeg(80)->save(base_path('public/uploads/about-us/'.$name_gen));
-            $save_url = 'uploads/about-us/'.$name_gen;
+            $save_url_left_icon_first_image = 'uploads/about-us/'.$name_gen;
 
-            if (file_exists($oldImage)) {
-                unlink($oldImage);
+            if (file_exists($old_left_icon_first_image)) {
+                unlink($old_left_icon_first_image);
             }
 
-            foreach ($validateData as $key) {
-                AboutUs::updateOrCreate(
-                    ['key' => $key],
-                    ['value' => $save_url],
-                );
-
-            }
-        }
-
-        foreach ($validateData as $key => $value) {
             AboutUs::updateOrCreate(
-                ['key' => $key],
-                ['value' => $value],
+                ['id' => 1],
+                [
+                    'left_title' => $request->left_title,
+                    'left_description' => $request->left_description,
+                    'left_icon_first_image' => $save_url_left_icon_first_image,
+                    'left_icon_first_number' => $request->left_icon_first_number,
+                    'left_icon_first_title' => $request->left_icon_first_title,
+                    'left_icon_second_number' => $request->left_icon_second_number,
+                    'left_icon_second_title' => $request->left_icon_second_title,
+                    'left_button_title' => $request->left_button_title,
+                    'left_button_url' => $request->left_button_url,
+                ]
             );
+
+            toastr('Updated Successfully!');
+            return redirect()->back();
         }
-        toastr()->success('Updated Successfully!');
-        return redirect()->back();
+
+
+
+        $old_left_icon_second_image = $request->old_left_icon_second_image;
+        if ($request->file('left_icon_second_image')) {
+            $image = $request->file('left_icon_second_image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img = $img->resize(64,64);
+            $img->toJpeg(80)->save(base_path('public/uploads/about-us/'.$name_gen));
+            $save_url_left_icon_second_image = 'uploads/about-us/'.$name_gen;
+
+            if (file_exists($old_left_icon_second_image)) {
+                unlink($old_left_icon_second_image);
+            }
+
+            AboutUs::updateOrCreate(
+                ['id' => 1],
+                [
+                    'left_title' => $request->left_title,
+                    'left_description' => $request->left_description,
+                    'left_icon_first_number' => $request->left_icon_first_number,
+                    'left_icon_first_title' => $request->left_icon_first_title,
+                    'left_icon_second_image' =>  $save_url_left_icon_second_image,
+                    'left_icon_second_number' => $request->left_icon_second_number,
+                    'left_icon_second_title' => $request->left_icon_second_title,
+                    'left_button_title' => $request->left_button_title,
+                    'left_button_url' => $request->left_button_url,
+                ]
+            );
+
+            toastr('Updated Successfully!');
+            return redirect()->back();
+        }
+
     }
 }
