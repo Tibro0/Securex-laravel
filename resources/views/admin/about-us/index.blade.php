@@ -15,6 +15,10 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
+                        <label>Preview Right Main Image</label><br>
+                        <img width="100" src="{{ asset(@$aboutUs['0']['right_main_image']) }}">
+                    </div>
+                    <div class="form-group">
                         <label>Right Main Image</label>
                         <input type="file" name="right_main_image" class="form-control">
                         <input type="hidden" name="old_right_main_image" value="{{ @$aboutUs['0']['right_main_image'] }}">
@@ -28,7 +32,10 @@
                         <label>Left Description</label>
                         <textarea name="left_description" class="form-control">{{ @$aboutUs['0']['left_description'] }}</textarea>
                     </div>
-
+                    <div class="form-group">
+                        <label>Preview Left Icon First Image</label><br>
+                        <img width="100" src="{{ asset(@$aboutUs['0']['left_icon_first_image']) }}">
+                    </div>
                     <div class="form-group">
                         <label>Left Icon First Image</label>
                         <input type="file" name="left_icon_first_image" value="" class="form-control">
@@ -46,12 +53,15 @@
                             value="{{ @$aboutUs['0']['left_icon_first_title'] }}" class="form-control">
                     </div>
                     <div class="form-group">
+                        <label>Preview Left Icon Second Image</label><br>
+                        <img width="100" src="{{ asset(@$aboutUs['0']['left_icon_second_image']) }}">
+                    </div>
+                    <div class="form-group">
                         <label>Left Icon Second Image</label>
                         <input type="file" name="left_icon_second_image" value="" class="form-control">
                         <input type="hidden" name="old_left_icon_second_image"
                             value="{{ @$aboutUs['0']['left_icon_second_image'] }}">
                     </div>
-
                     <div class="form-group">
                         <label>Left Icon Second Number</label>
                         <input type="text" name="left_icon_second_number"
@@ -67,13 +77,11 @@
                         <input type="text" name="left_button_title" value="{{ @$aboutUs['0']['left_button_title'] }}"
                             class="form-control">
                     </div>
-
                     <div class="form-group">
                         <label>Left Button Url</label>
                         <input type="text" name="left_button_url" value="{{ @$aboutUs['0']['left_button_url'] }}"
                             class="form-control">
                     </div>
-
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
