@@ -6,7 +6,7 @@
                 @method('PUT')
                 <div class="form-group">
                     <label>Preview</label><br>
-                    <img width="100" src="{{ asset($aboutUs['about_us_part_one_image']) }}">
+                    <img width="100" src="{{ asset(@$aboutUs['about_us_part_one_image']) }}">
                 </div>
                 <div class="form-group">
                     <label>Image</label>

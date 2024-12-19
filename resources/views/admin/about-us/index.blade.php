@@ -26,6 +26,10 @@
                                             <a class="nav-link" id="profile-tab4" data-toggle="tab" href="#profile4"
                                                 role="tab" aria-controls="profile" aria-selected="false">Part Two</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="contact-tab4" data-toggle="tab" href="#contact4"
+                                                role="tab" aria-controls="contact" aria-selected="true">Part Three</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-10">
@@ -34,6 +38,8 @@
                                         @include('admin.about-us.sections.part-one')
                                         <!-- Part Two links -->
                                         @include('admin.about-us.sections.part-two')
+                                        <!-- Part Three links -->
+                                        @include('admin.about-us.sections.part-three')
                                     </div>
                                 </div>
                             </div>
