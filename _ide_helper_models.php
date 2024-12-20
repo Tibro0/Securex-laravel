@@ -15,9 +15,37 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string|null $right_main_image
+ * @property string|null $left_title
+ * @property string|null $left_description
+ * @property string|null $left_icon_first_image
+ * @property string|null $left_icon_first_number
+ * @property string|null $left_icon_first_title
+ * @property string|null $left_icon_second_image
+ * @property string|null $left_icon_second_number
+ * @property string|null $left_icon_second_title
+ * @property string|null $left_button_title
+ * @property string|null $left_button_url
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftButtonTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftButtonUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftIconFirstImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftIconFirstNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftIconFirstTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftIconSecondImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftIconSecondNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftIconSecondTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereLeftTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereRightMainImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AboutUs whereUpdatedAt($value)
  */
 	class AboutUs extends \Eloquent {}
 }
@@ -45,6 +73,33 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereUpdatedAt($value)
  */
 	class Detail extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $image
+ * @property string $title
+ * @property string $description
+ * @property string $button_url
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereButtonUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurService whereUpdatedAt($value)
+ */
+	class OurService extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -112,5 +167,16 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox query()
+ */
+	class WhyChooseUsIconBox extends \Eloquent {}
 }
 
