@@ -8,127 +8,48 @@
             <div class="col-12 text-center">
                 <ul class="list-inline mb-5" id="portfolio-flters">
                     <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".first">Complete Projects</li>
-                    <li class="mx-2" data-filter=".second">Ongoing Projects</li>
+                    @foreach ($categories as $category)
+                        <li class="mx-2" data-filter=".{{ $category->slug }}">
+                            {{ $category->name }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>
         <div class="row g-4 portfolio-container">
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-1.jpg') }}" alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">Business Security</p>
-                        <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
-                    </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">Business Security</p>
-                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary rounded-circle mx-1"
-                                href="{{ asset('frontend/img/portfolio-1.jpg') }}" data-lightbox="portfolio"><i
-                                    class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                    class="fa fa-link"></i></a>
+            @foreach ($categories as $category)
+                @php
+                    $ourProjects = App\Models\OurProject::where([
+                        'status' => 1,
+                        'category_id' => $category->id,
+                    ])
+                        ->orderBy('id', 'DESC')
+                        ->take(8)
+                        ->get();
+                @endphp
+                @foreach ($ourProjects as $ourProject)
+                    <div class="col-lg-4 col-md-6 portfolio-item {{ $category->slug }} wow fadeInUp"
+                        data-wow-delay="0.1s">
+                        <div class="portfolio-inner">
+                            <img class="img-fluid w-100" src="{{ asset($ourProject->thumb_image) }}" alt="">
+                            <div class="text-center p-4">
+                                <p class="text-primary mb-2">{{ $ourProject->title }}</p>
+                                <h5 class="lh-base mb-0">{{ $ourProject->description }}</h5>
+                            </div>
+                            <div class="portfolio-text text-center bg-white p-4">
+                                <p class="text-primary mb-2">{{ $ourProject->title }}</p>
+                                <h5 class="lh-base mb-3">{{ $ourProject->description }}</h5>
+                                <div class="d-flex justify-content-center">
+                                    {{-- <a class="btn btn-square btn-primary rounded-circle mx-1"
+                                        href="{{ asset('frontend/img/portfolio-1.jpg') }}" data-lightbox="portfolio"><i
+                                            class="fa fa-eye"></i></a> --}}
+                                    <a class="btn btn-square btn-primary rounded-circle mx-1"
+                                        href="{{ $ourProject->url }}"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-2.jpg') }}" alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">Fire Detection</p>
-                        <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
-                    </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">Fire Detection</p>
-                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-2.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-3.jpg') }}" alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">Access Control</p>
-                        <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
-                    </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">Access Control</p>
-                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-3.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-4.jpg') }}" alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">Alarm Systems</p>
-                        <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
-                    </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">Alarm Systems</p>
-                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-4.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
-                <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-5.jpg') }}" alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">CCTV & Video</p>
-                        <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
-                    </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">CCTV & Video</p>
-                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-5.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                <div class="portfolio-inner">
-                    <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-6.jpg') }}" alt="">
-                    <div class="text-center p-4">
-                        <p class="text-primary mb-2">Smart Home</p>
-                        <h5 class="lh-base mb-0">Smart CCTV Security Systems That Fits Your Business</h5>
-                    </div>
-                    <div class="portfolio-text text-center bg-white p-4">
-                        <p class="text-primary mb-2">Smart Home</p>
-                        <h5 class="lh-base mb-3">Smart CCTV Security Systems That Fits Your Business</h5>
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-6.jpg"
-                                data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            @endforeach
         </div>
     </div>
 </div>
