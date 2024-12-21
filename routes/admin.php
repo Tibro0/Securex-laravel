@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DetailController;
+use App\Http\Controllers\Admin\OurProjectController;
 use App\Http\Controllers\Admin\OurServiceController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
@@ -32,3 +34,8 @@ Route::resource('our-service', OurServiceController::class);
 
 /** Why Choose Us Icon Box route */
 Route::resource('why-choose-us-icon-box', WhyChooseUsIconBoxController::class);
+
+/** Our Projects route */
+Route::resource('category', CategoryController::class);
+
+Route::resource('our-project', OurProjectController::class);

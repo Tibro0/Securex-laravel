@@ -9,54 +9,20 @@
                         amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat
                         amet</p>
                     <div class="row g-4">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
-                                    <img class="img-fluid" src="{{ asset('frontend/img/icon/icon-7.png') }}"
-                                        alt="Icon">
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-primary mb-2">Trusted</p>
-                                    <h5 class="mb-0">Security</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
-                                    <img class="img-fluid" src="{{ asset('frontend/img/icon/icon-10.png') }}"
-                                        alt="Icon">
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-primary mb-2">Quality</p>
-                                    <h5 class="mb-0">Services</h5>
+                        @foreach ($whyChooseUsIconBoxes as $whyChooseUsIconBox)
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
+                                        <img class="img-fluid" src="{{ asset($whyChooseUsIconBox->image) }}"
+                                            alt="Icon">
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-primary mb-2">{{ $whyChooseUsIconBox->name }}</p>
+                                        <h5 class="mb-0">{{ $whyChooseUsIconBox->title }}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
-                                    <img class="img-fluid" src="{{ asset('frontend/img/icon/icon-3.png') }}"
-                                        alt="Icon">
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-primary mb-2">Smart</p>
-                                    <h5 class="mb-0">Systems</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="btn-square bg-white rounded-circle" style="width: 64px; height: 64px;">
-                                    <img class="img-fluid" src="{{ asset('frontend/img/icon/icon-2.png') }}"
-                                        alt="Icon">
-                                </div>
-                                <div class="ms-4">
-                                    <p class="text-primary mb-2">24/7 Hours</p>
-                                    <h5 class="mb-0">Support</h5>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

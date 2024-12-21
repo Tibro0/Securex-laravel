@@ -55,6 +55,29 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereUpdatedAt($value)
+ */
+	class Category extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property string $image
  * @property string $title
  * @property string $description
@@ -73,6 +96,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereUpdatedAt($value)
  */
 	class Detail extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject query()
+ */
+	class OurProject extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -173,9 +207,23 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $name
+ * @property string $title
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|WhyChooseUsIconBox whereUpdatedAt($value)
  */
 	class WhyChooseUsIconBox extends \Eloquent {}
 }
