@@ -23,7 +23,7 @@
                         'category_id' => $category->id,
                     ])
                         ->orderBy('id', 'DESC')
-                        ->take(8)
+                        ->take(6)
                         ->get();
                 @endphp
                 @foreach ($ourProjects as $ourProject)
