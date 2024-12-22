@@ -21,6 +21,8 @@
                     <li><a class="nav-link" href="{{ route('admin.detail.index') }}">Details</a></li>
                     <li><a class="nav-link" href="{{ route('admin.about-us.index') }}">About Us</a></li>
                     <li><a class="nav-link" href="{{ route('admin.our-service.index') }}">Our Services</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.team-member.index') }}">Team Members</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.testimonial.index') }}">Testimonial</a></li>
                 </ul>
             </li>
 

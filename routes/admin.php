@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\OurProjectController;
 use App\Http\Controllers\Admin\OurServiceController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\TeamMemberController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\WhyChooseUsIconBoxController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,5 +39,10 @@ Route::resource('why-choose-us-icon-box', WhyChooseUsIconBoxController::class);
 
 /** Our Projects route */
 Route::resource('category', CategoryController::class);
-
 Route::resource('our-project', OurProjectController::class);
+
+/** Team Members route */
+Route::resource('team-member', TeamMemberController::class);
+
+/** Testimonial route */
+Route::resource('testimonial', TestimonialController::class);

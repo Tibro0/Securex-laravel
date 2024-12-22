@@ -102,9 +102,27 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property int $category_id
+ * @property string $thumb_image
+ * @property string $title
+ * @property string $description
+ * @property string $url
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereThumbImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|OurProject whereUrl($value)
  */
 	class OurProject extends \Eloquent {}
 }
@@ -167,6 +185,48 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Slider whereUpdatedAt($value)
  */
 	class Slider extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $image
+ * @property string $name
+ * @property string $designation
+ * @property string $facebook_url
+ * @property string $linkedin_url
+ * @property string $whatsapp_url
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereDesignation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereFacebookUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereLinkedinUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|TeamMember whereWhatsappUrl($value)
+ */
+	class TeamMember extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial query()
+ */
+	class Testimonial extends \Eloquent {}
 }
 
 namespace App\Models{
