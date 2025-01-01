@@ -9,7 +9,7 @@
                                 style="width: 64px; height: 64px; background: #000000;">
                                 <img class="img-fluid" src="{{ asset($fact->image) }}" alt="Icon">
                             </div>
-                            <h1 class="display-1 mb-0" style="color: #000000;">{{ $loop->index + 1 }}</h1>
+                            <h1 class="display-1 mb-0" style="color: #000000;">{{ $loop->iteration }}</h1>
                         </div>
                         <h5 class="text-white">{{ $fact->title }}</h5>
                         <hr class="w-25">
