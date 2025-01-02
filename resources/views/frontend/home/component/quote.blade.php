@@ -12,30 +12,48 @@
                     <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
                     <h1 class="display-5 mb-5">Free Quote</h1>
                     <p class="mb-4 pb-2">{{ @$allDescription['free_quote_description'] }}</p>
-                    <form>
+                    <form action="{{ route('free-quote-form.store') }}" method="POST">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Your Name"
-                                    style="height: 55px;">
+                                <input type="text" name="your_name" value="{{ old('your_name') }}"
+                                    class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                @if ($errors->has('your_name'))
+                                    <p class="error text-danger mt-1 mb-0">{{ $errors->first('your_name') }}</p>
+                                @endif
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control border-0" placeholder="Your Email"
-                                    style="height: 55px;">
+                                <input type="email" name="your_email" value="{{ old('your_email') }}"
+                                    class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                @if ($errors->has('your_email'))
+                                    <p class="error text-danger mt-1 mb-0">{{ $errors->first('your_email') }}</p>
+                                @endif
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Your Mobile"
-                                    style="height: 55px;">
+                                <input type="text" name="your_mobile" value="{{ old('your_mobile') }}"
+                                    class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                @if ($errors->has('your_mobile'))
+                                    <p class="error text-danger mt-1 mb-0">{{ $errors->first('your_mobile') }}</p>
+                                @endif
                             </div>
                             <div class="col-12 col-sm-6">
-                                <select class="form-select border-0" style="height: 55px;">
-                                    <option selected>Select A Service</option>
-                                    <option value="1">Service 1</option>
-                                    <option value="2">Service 2</option>
-                                    <option value="3">Service 3</option>
+                                <select name="all_service_name_id" class="form-select border-0" style="height: 55px;">
+                                    <option selected value="">Select A Service</option>
+                                    @foreach ($allServiceNames as $allServiceName)
+                                        <option value="{{ $allServiceName->id }}">{{ $allServiceName->service_name }}
+                                        </option>
+                                    @endforeach
                                 </select>
+                                @if ($errors->has('all_service_name_id'))
+                                    <p class="error text-danger mt-1 mb-0">{{ $errors->first('all_service_name_id') }}
+                                    </p>
+                                @endif
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0" placeholder="Special Note"></textarea>
+                                <textarea name="special_note" class="form-control border-0" placeholder="Special Note">{{ old('special_note') }}</textarea>
+                                @if ($errors->has('special_note'))
+                                    <p class="error text-danger mt-1 mb-0">{{ $errors->first('special_note') }}</p>
+                                @endif
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Get A Free

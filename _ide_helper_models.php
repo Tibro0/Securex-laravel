@@ -75,9 +75,19 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $service_name
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName whereServiceName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName whereUpdatedAt($value)
  */
 	class AllServiceName extends \Eloquent {}
 }
@@ -128,6 +138,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Detail whereUpdatedAt($value)
  */
 	class Detail extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm query()
+ */
+	class FreeQuoteForm extends \Eloquent {}
 }
 
 namespace App\Models{
