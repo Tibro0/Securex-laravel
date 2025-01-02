@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AllServiceNameController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\FreeQuoteDescriptionController;
+use App\Http\Controllers\Admin\FreeQuoteFormInformationController;
 use App\Http\Controllers\Admin\OurProjectController;
 use App\Http\Controllers\Admin\OurServiceController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -54,6 +55,9 @@ Route::put('free-quote-description-update', [FreeQuoteDescriptionController::cla
 
 /** Service Name route */
 Route::resource('service-name', AllServiceNameController::class);
+
+/** Free Quote Form Information route */
+Route::resource('free-quote-form-information', FreeQuoteFormInformationController::class);
 
 /** Team Members route */
 Route::resource('team-member', TeamMemberController::class);

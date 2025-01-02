@@ -14,7 +14,6 @@ class FrontendFreeQuoteFormController extends Controller
             'your_email' => ['required', 'email', 'max:255'],
             'your_mobile' => ['required', 'max:255'],
             'all_service_name_id' => ['required', 'integer'],
-            'special_note' => ['required'],
         ],[
             'all_service_name_id.required' => 'the service field is required'
         ]);

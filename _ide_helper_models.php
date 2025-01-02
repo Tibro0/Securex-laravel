@@ -144,9 +144,28 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $your_name
+ * @property string $your_email
+ * @property string $your_mobile
+ * @property int $all_service_name_id
+ * @property string|null $special_note
+ * @property string $seen
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\AllServiceName $allServiceName
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereAllServiceNameId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereSeen($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereSpecialNote($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereYourEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereYourMobile($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FreeQuoteForm whereYourName($value)
  */
 	class FreeQuoteForm extends \Eloquent {}
 }

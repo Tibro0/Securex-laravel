@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('your_mobile');
             $table->foreignId('all_service_name_id')->constrained('all_service_names')->onDelete('cascade');
             $table->text('special_note')->nullable();
-            $table->enum('seen', ['yse', 'no'])->default('no');
+            $table->enum('seen', ['yes', 'no'])->default('no');
             $table->timestamps();
         });
     }

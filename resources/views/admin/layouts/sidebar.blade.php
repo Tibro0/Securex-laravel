@@ -53,9 +53,12 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.service-name.index') }}">Service Name</a>
                     </li>
-
                     <li><a class="nav-link" href="{{ route('admin.free-quote-description.index') }}">Free Quote
                             Description</a></li>
+
+                    <li><a class="nav-link" href="{{ route('admin.free-quote-form-information.index') }}">Free Quote
+                            Form</a>
+                    </li>
                 </ul>
             </li>
 
