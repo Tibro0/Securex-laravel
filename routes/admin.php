@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AllServiceNameController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\FreeQuoteDescriptionController;
@@ -47,9 +48,12 @@ Route::put('why-choose-us-description-update', [WhyChooseUsDescriptionController
 Route::resource('category', CategoryController::class);
 Route::resource('our-project', OurProjectController::class);
 
-/** Free Quote description route */
+/** Free Quote Description route */
 Route::get('free-quote-description-index', [FreeQuoteDescriptionController::class, 'index'])->name('free-quote-description.index');
 Route::put('free-quote-description-update', [FreeQuoteDescriptionController::class, 'freeQuoteDescriptionUpdate'])->name('free-quote-description.update');
+
+/** Service Name route */
+Route::resource('service-name', AllServiceNameController::class);
 
 /** Team Members route */
 Route::resource('team-member', TeamMemberController::class);

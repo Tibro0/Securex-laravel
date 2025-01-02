@@ -54,11 +54,32 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string|null $key
+ * @property string|null $value
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription whereValue($value)
  */
 	class AllDescription extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllServiceName query()
+ */
+	class AllServiceName extends \Eloquent {}
 }
 
 namespace App\Models{
