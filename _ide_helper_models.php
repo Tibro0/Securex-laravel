@@ -54,6 +54,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllDescription query()
+ */
+	class AllDescription extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $name
  * @property string $slug
@@ -222,9 +233,25 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $image
+ * @property string $client_name
+ * @property string $profession
+ * @property string $description
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereClientName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereProfession($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Testimonial whereUpdatedAt($value)
  */
 	class Testimonial extends \Eloquent {}
 }

@@ -136,5 +136,22 @@ class AboutUsController extends Controller
             return redirect()->back();
         }
 
+        AboutUs::updateOrCreate(
+            ['id' => 1],
+            [
+                'left_title' => $request->left_title,
+                'left_description' => $request->left_description,
+                'left_icon_first_number' => $request->left_icon_first_number,
+                'left_icon_first_title' => $request->left_icon_first_title,
+                'left_icon_second_number' => $request->left_icon_second_number,
+                'left_icon_second_title' => $request->left_icon_second_title,
+                'left_button_title' => $request->left_button_title,
+                'left_button_url' => $request->left_button_url,
+            ]
+        );
+
+        toastr('Updated Successfully!');
+        return redirect()->back();
+
     }
 }

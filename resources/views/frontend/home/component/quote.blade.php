@@ -11,9 +11,7 @@
                 <div class="p-lg-5 pe-lg-0">
                     <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
                     <h1 class="display-5 mb-5">Free Quote</h1>
-                    <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                        amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat
-                        amet</p>
+                    <p class="mb-4 pb-2">{{ @$allDescription['free_quote_description'] }}</p>
                     <form>
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">

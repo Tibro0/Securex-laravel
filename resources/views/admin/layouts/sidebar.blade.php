@@ -32,6 +32,8 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.why-choose-us-icon-box.index') }}">Why Choose Us Icon
                             Box</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.why-choose-us-description.index') }}">Description</a>
+                    </li>
                 </ul>
             </li>
 
@@ -41,6 +43,16 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
                     <li><a class="nav-link" href="{{ route('admin.our-project.index') }}">Our Project</a></li>
+                </ul>
+            </li>
+
+
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Free Quote</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.free-quote-description.index') }}">Free Quote
+                            Description</a></li>
                 </ul>
             </li>
 

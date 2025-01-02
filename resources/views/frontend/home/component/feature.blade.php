@@ -5,9 +5,7 @@
                 <div class="p-lg-5 ps-lg-0">
                     <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
                     <h1 class="display-5 mb-5">Why Choose Us</h1>
-                    <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                        amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat
-                        amet</p>
+                    <p class="mb-4 pb-2">{{ @$allDescription['why_choose_us_description'] }}</p>
                     <div class="row g-4">
                         @foreach ($whyChooseUsIconBoxes as $whyChooseUsIconBox)
                             <div class="col-6">
