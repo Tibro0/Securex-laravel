@@ -82,6 +82,7 @@
                     <li><a class="nav-link" href="{{ route('admin.service.index') }}">Services</a></li>
                     <li><a class="nav-link" href="{{ route('admin.terms-and-condition.index') }}">Terms And
                             Condition</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.support.index') }}">Support</a></li>
                 </ul>
             </li>
 

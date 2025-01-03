@@ -95,4 +95,8 @@ Route::put('service/update', [AllPageController::class, 'servicePageUpdate'])->n
 Route::get('terms-and-condition/index', [AllPageController::class, 'termsAndConditionIndex'])->name('terms-and-condition.index');
 Route::put('terms-and-condition/update', [AllPageController::class, 'termsAndConditionPageUpdate'])->name('terms-and-condition-page.update');
 
+/** Support Page Content route */
+Route::get('support/index', [AllPageController::class, 'supportIndex'])->name('support.index');
+Route::put('support/update', [AllPageController::class, 'supportPageUpdate'])->name('support-page.update');
+
 

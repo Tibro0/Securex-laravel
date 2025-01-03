@@ -74,4 +74,25 @@ class AllPageController extends Controller
         return redirect()->back();
     }
 
+    public function supportIndex(){
+        $keys = ['support_page_content'];
+        $supportContent = AllPage::whereIn('key', $keys)->pluck('value','key');
+        return view('admin.all-page.support', compact('supportContent'));
+    }
+
+    public function supportPageUpdate(Request $request){
+        $validatedData = $request->validate([
+            'support_page_content' => ['required']
+        ]);
+
+        foreach ($validatedData as $key => $value) {
+            AllPage::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value]
+            );
+        }
+
+        toastr()->success('Updated Successfully!');
+        return redirect()->back();
+    }
 }
