@@ -87,4 +87,12 @@ Route::resource('social-link', SocialLinkController::class);
 Route::get('about-us/index', [AllPageController::class, 'aboutUsIndex'])->name('about-us.index');
 Route::put('about-us/update', [AllPageController::class, 'aboutUsPageUpdate'])->name('about-us-page.update');
 
+/** Service Page Content route */
+Route::get('service/index', [AllPageController::class, 'serviceIndex'])->name('service.index');
+Route::put('service/update', [AllPageController::class, 'servicePageUpdate'])->name('service-page.update');
+
+/** Terms and Condition Page Content route */
+Route::get('terms-and-condition/index', [AllPageController::class, 'termsAndConditionIndex'])->name('terms-and-condition.index');
+Route::put('terms-and-condition/update', [AllPageController::class, 'termsAndConditionPageUpdate'])->name('terms-and-condition-page.update');
+
 

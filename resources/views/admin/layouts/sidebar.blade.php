@@ -79,6 +79,9 @@
                     <span>All Pages</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.about-us.index') }}">About Us</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.service.index') }}">Services</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.terms-and-condition.index') }}">Terms And
+                            Condition</a></li>
                 </ul>
             </li>
 
