@@ -1,3 +1,6 @@
+@php
+    $footerGridOne = App\Models\FooterGridOne::first();
+@endphp
 <div class="container-fluid bg-dark px-5">
     <div class="row gx-4 d-none d-lg-flex">
         <div class="col-lg-6 text-start">
@@ -5,13 +8,13 @@
                 <div class="btn-sm-square rounded-circle bg-primary me-2">
                     <small class="fa fa-map-marker-alt text-white"></small>
                 </div>
-                <small>123 Street, New York, USA</small>
+                <small>{{ @$footerGridOne->address }}</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center py-3">
                 <div class="btn-sm-square rounded-circle bg-primary me-2">
                     <small class="fa fa-envelope-open text-white"></small>
                 </div>
-                <small>info@example.com</small>
+                <small>{{ @$footerGridOne->email }}</small>
             </div>
         </div>
         <div class="col-lg-6 text-end">
@@ -19,13 +22,13 @@
                 <div class="btn-sm-square rounded-circle bg-primary me-2">
                     <small class="fa fa-phone-alt text-white"></small>
                 </div>
-                <small>+012 345 6789</small>
+                <small>{{ @$footerGridOne->phone }}</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center py-3">
                 <div class="btn-sm-square rounded-circle bg-primary me-2">
                     <small class="far fa-clock text-white"></small>
                 </div>
-                <small>Mon - Fri : 9AM - 9PM</small>
+                <small>{{ @$footerGridOne->store_open_time }}</small>
             </div>
         </div>
     </div>

@@ -66,6 +66,7 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Footer</span></a>
                 <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.footer-grid-one.index') }}">Footer Grid One</a></li>
                     <li><a class="nav-link" href="{{ route('admin.social-link.index') }}">Social Link</a></li>
                 </ul>
             </li>

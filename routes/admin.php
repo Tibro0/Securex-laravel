@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AllServiceNameController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DetailController;
+use App\Http\Controllers\Admin\FooterGridOneController;
 use App\Http\Controllers\Admin\FreeQuoteDescriptionController;
 use App\Http\Controllers\Admin\FreeQuoteFormInformationController;
 use App\Http\Controllers\Admin\OurProjectController;
@@ -65,6 +66,10 @@ Route::resource('team-member', TeamMemberController::class);
 
 /** Testimonial route */
 Route::resource('testimonial', TestimonialController::class);
+
+/** Footer Grid One route */
+Route::get('footer-grid-one/index', [FooterGridOneController::class, 'index'])->name('footer-grid-one.index');
+Route::put('footer-grid-one/update', [FooterGridOneController::class, 'FooterGridOneUpdate'])->name('footer-grid-one.update');
 
 /** Social Links route */
 Route::resource('social-link', SocialLinkController::class);

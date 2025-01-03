@@ -144,6 +144,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne query()
+ */
+	class FooterGridOne extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $your_name
  * @property string $your_email
@@ -263,9 +274,23 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $icon
+ * @property string $name
+ * @property string $link
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereIcon($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink whereUpdatedAt($value)
  */
 	class SocialLink extends \Eloquent {}
 }
