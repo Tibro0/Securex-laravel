@@ -263,6 +263,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|SocialLink query()
+ */
+	class SocialLink extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $image
  * @property string $name

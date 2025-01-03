@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\OurProjectController;
 use App\Http\Controllers\Admin\OurServiceController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SocialLinkController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\WhyChooseUsDescriptionController;
@@ -64,3 +65,6 @@ Route::resource('team-member', TeamMemberController::class);
 
 /** Testimonial route */
 Route::resource('testimonial', TestimonialController::class);
+
+/** Social Links route */
+Route::resource('social-link', SocialLinkController::class);

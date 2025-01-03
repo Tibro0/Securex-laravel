@@ -62,6 +62,14 @@
                 </ul>
             </li>
 
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Footer</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.social-link.index') }}">Social Link</a></li>
+                </ul>
+            </li>
+
 
             {{-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
@@ -72,6 +80,7 @@
                     <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
                 </ul>
             </li> --}}
+
             {{-- <li class=active><a class="nav-link" href="blank.html"><i class="far fa-square"></i>
                     <span>Blank Page</span></a></li> --}}
         </ul>
