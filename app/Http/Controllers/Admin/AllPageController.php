@@ -73,4 +73,5 @@ class AllPageController extends Controller
         toastr()->success('Updated Successfully!');
         return redirect()->back();
     }
+
 }
