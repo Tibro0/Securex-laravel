@@ -144,11 +144,52 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $website_name
+ * @property string $address
+ * @property string $phone
+ * @property string $email
+ * @property string $store_open_time
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereStoreOpenTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridOne whereWebsiteName($value)
  */
 	class FooterGridOne extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $url
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridTwo whereUrl($value)
+ */
+	class FooterGridTwo extends \Eloquent {}
 }
 
 namespace App\Models{
