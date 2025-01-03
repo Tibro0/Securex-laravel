@@ -68,8 +68,10 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.footer-grid-one.index') }}">Footer Grid One</a></li>
                     <li><a class="nav-link" href="{{ route('admin.social-link.index') }}">Social Link</a></li>
-
                     <li><a class="nav-link" href="{{ route('admin.footer-grid-two.index') }}">Footer Grid Two</a></li>
+
+                    <li><a class="nav-link" href="{{ route('admin.footer-grid-three.index') }}">Footer Grid Three</a>
+                    </li>
                 </ul>
             </li>
 

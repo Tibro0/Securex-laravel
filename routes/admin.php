@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AllServiceNameController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DetailController;
 use App\Http\Controllers\Admin\FooterGridOneController;
+use App\Http\Controllers\Admin\FooterGridThreeController;
 use App\Http\Controllers\Admin\FooterGridTwoController;
 use App\Http\Controllers\Admin\FreeQuoteDescriptionController;
 use App\Http\Controllers\Admin\FreeQuoteFormInformationController;
@@ -74,6 +75,9 @@ Route::put('footer-grid-one/update', [FooterGridOneController::class, 'FooterGri
 
 /** Footer Grid Two route */
 Route::resource('footer-grid-two', FooterGridTwoController::class);
+
+/** Footer Grid Three route */
+Route::resource('footer-grid-three', FooterGridThreeController::class);
 
 /** Social Links route */
 Route::resource('social-link', SocialLinkController::class);

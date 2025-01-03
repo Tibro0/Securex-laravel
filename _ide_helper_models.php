@@ -171,6 +171,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree query()
+ */
+	class FooterGridThree extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $name
  * @property string $url
