@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AllPageController;
 use App\Http\Controllers\Admin\AllServiceNameController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DetailController;
@@ -81,3 +82,7 @@ Route::resource('footer-grid-three', FooterGridThreeController::class);
 
 /** Social Links route */
 Route::resource('social-link', SocialLinkController::class);
+
+/** About Us Page Content route */
+Route::get('about-us/index', [AllPageController::class, 'aboutUsIndex'])->name('about-us.index');
+Route::put('about-us/update', [AllPageController::class, 'aboutUsPageUpdate'])->name('about-us-page.update');

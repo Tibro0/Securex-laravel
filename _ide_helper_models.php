@@ -75,6 +75,17 @@ namespace App\Models{
 /**
  * 
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage query()
+ */
+	class AllPage extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
  * @property int $id
  * @property string $service_name
  * @property int $status
@@ -171,9 +182,23 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string $name
+ * @property string $url
+ * @property int $priority_number
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree wherePriorityNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FooterGridThree whereUrl($value)
  */
 	class FooterGridThree extends \Eloquent {}
 }
