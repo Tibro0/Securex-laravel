@@ -87,3 +87,4 @@ Route::resource('social-link', SocialLinkController::class);
 Route::get('about-us/index', [AllPageController::class, 'aboutUsIndex'])->name('about-us.index');
 Route::put('about-us/update', [AllPageController::class, 'aboutUsPageUpdate'])->name('about-us-page.update');
 
+
