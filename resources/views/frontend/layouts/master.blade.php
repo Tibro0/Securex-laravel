@@ -54,15 +54,14 @@
     <div class="container-fluid py-4" style="background: #000000;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="javascript:;">Your Site Name</a>, All Right Reserved.
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">Copyright
+                    &copy; {{ date('Y') }} All Right Reserved.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-
+                {{-- <div class="col-md-6 text-center text-md-end">
                     Designed By <a class="border-bottom" href="javascript:;">MD Faysal Hossain
                         Tibro</a><br>Distributed By <a class="border-bottom" href="javascript:;">MD Faysal
                         Hossain Tibro</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
