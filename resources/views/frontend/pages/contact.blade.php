@@ -33,7 +33,7 @@
                         <p class="mb-4">{{ @$contactFormPageDescription['contact_form_page_description'] }}</p>
                         <form action="{{ route('contact.store') }}" method="POST">
                             @csrf
-                            <div class="row g-3">
+                            <div class="row g-3 h-100">
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="name" name="your_name"
@@ -71,8 +71,8 @@
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
-                            src="{{ @$contactFormPageDescription['contact_form_page_map'] }}" frameborder="0"
-                            allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            src="{!! @$contactFormPageDescription['contact_form_page_map'] !!}" frameborder="0" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
