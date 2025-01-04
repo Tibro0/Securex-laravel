@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ContactFormMessageDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\AllDescription;
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
 
@@ -52,5 +53,27 @@ class ContactFormMessageController extends Controller
         $contactFormMessage->delete();
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+    }
+
+    public function contactFormPageDescriptionIndex(){
+        $keys = ['contact_form_page_description'];
+        $contactFormPageDescription = AllDescription::whereIn('key', $keys)->pluck('value','key');
+        return view('admin.contact-form-message.description.index', compact('contactFormPageDescription'));
+    }
+
+    public function contactFormPageDescriptionUpdate(Request $request){
+        $validatedData = $request->validate([
+            'contact_form_page_description' => ['required'],
+        ]);
+
+        foreach ($validatedData as $key => $value) {
+            AllDescription::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value]
+            );
+        }
+
+        toastr()->success('Updated Successfully!');
+        return redirect()->back();
     }
 }

@@ -30,9 +30,7 @@
                         <div class="section-title text-start">
                             <h1 class="display-5 mb-4">Contact Us</h1>
                         </div>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form
-                            with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're
-                            done.</p>
+                        <p class="mb-4">{{ @$contactFormPageDescription['contact_form_page_description'] }}</p>
                         <form action="{{ route('contact.store') }}" method="POST">
                             @csrf
                             <div class="row g-3">

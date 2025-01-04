@@ -92,6 +92,9 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.contact-form-message.index') }}">Contact Form
                             Message</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.contact-form-page-description.index') }}">Contact
+                            Page
+                            Description</a></li>
                 </ul>
             </li>
 

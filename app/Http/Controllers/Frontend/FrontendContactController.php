@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AllDescription;
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
 
 class FrontendContactController extends Controller
 {
     public function index(){
-        return view('frontend.pages.contact');
+        $keys = ['contact_form_page_description'];
+        $contactFormPageDescription = AllDescription::whereIn('key', $keys)->pluck('value','key');
+        return view('frontend.pages.contact', compact('contactFormPageDescription'));
     }
 
     public function contactStore(Request $request){

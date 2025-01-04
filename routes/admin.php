@@ -100,5 +100,9 @@ Route::put('terms-and-condition/update', [AllPageController::class, 'termsAndCon
 Route::get('support/index', [AllPageController::class, 'supportIndex'])->name('support.index');
 Route::put('support/update', [AllPageController::class, 'supportPageUpdate'])->name('support-page.update');
 
+/** Contact Form Page Description route */
+Route::get('contact-form-page-description/index', [ContactFormMessageController::class, 'contactFormPageDescriptionIndex'])->name('contact-form-page-description.index');
+
+Route::put('contact-form-page-description/update', [ContactFormMessageController::class, 'contactFormPageDescriptionUpdate'])->name('contact-form-page-description.update');
 /** Contact Form Message route */
 Route::resource('contact-form-message', ContactFormMessageController::class);
