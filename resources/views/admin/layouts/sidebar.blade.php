@@ -95,6 +95,10 @@
                     <li><a class="nav-link" href="{{ route('admin.contact-form-page-description.index') }}">Contact
                             Page
                             Description</a></li>
+
+                    <li><a class="nav-link" href="{{ route('admin.contact-form-page-map.index') }}">Contact
+                            Page
+                            Map</a></li>
                 </ul>
             </li>
 

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class FrontendContactController extends Controller
 {
     public function index(){
-        $keys = ['contact_form_page_description'];
+        $keys = ['contact_form_page_description', 'contact_form_page_map'];
         $contactFormPageDescription = AllDescription::whereIn('key', $keys)->pluck('value','key');
         return view('frontend.pages.contact', compact('contactFormPageDescription'));
     }

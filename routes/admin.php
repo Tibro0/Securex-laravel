@@ -102,7 +102,11 @@ Route::put('support/update', [AllPageController::class, 'supportPageUpdate'])->n
 
 /** Contact Form Page Description route */
 Route::get('contact-form-page-description/index', [ContactFormMessageController::class, 'contactFormPageDescriptionIndex'])->name('contact-form-page-description.index');
-
 Route::put('contact-form-page-description/update', [ContactFormMessageController::class, 'contactFormPageDescriptionUpdate'])->name('contact-form-page-description.update');
+
+/** Contact Form Page Map route */
+Route::get('contact-form-page-map/index', [ContactFormMessageController::class, 'contactFormPageMapIndex'])->name('contact-form-page-map.index');
+Route::put('contact-form-page-map/update', [ContactFormMessageController::class, 'contactFormPageMapUpdate'])->name('contact-form-page-map.update');
+
 /** Contact Form Message route */
 Route::resource('contact-form-message', ContactFormMessageController::class);

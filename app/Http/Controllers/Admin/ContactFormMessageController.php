@@ -76,4 +76,26 @@ class ContactFormMessageController extends Controller
         toastr()->success('Updated Successfully!');
         return redirect()->back();
     }
+
+    public function contactFormPageMapIndex(){
+        $keys = ['contact_form_page_map'];
+        $contactFormPageMap = AllDescription::whereIn('key', $keys)->pluck('value','key');
+        return view('admin.contact-form-message.map-url.index', compact('contactFormPageMap'));
+    }
+
+    public function contactFormPageMapUpdate(Request $request){
+        $validatedData = $request->validate([
+            'contact_form_page_map' => ['required'],
+        ]);
+
+        foreach ($validatedData as $key => $value) {
+            AllDescription::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value]
+            );
+        }
+
+        toastr()->success('Updated Successfully!');
+        return redirect()->back();
+    }
 }
