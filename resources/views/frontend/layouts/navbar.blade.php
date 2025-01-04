@@ -15,7 +15,7 @@
             <a href="about.html" class="nav-item nav-link">About</a>
             <a href="service.html" class="nav-item nav-link">Service</a>
             <a href="project.html" class="nav-item nav-link">Project</a>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="{{ route('contact.index') }}" class="nav-item nav-link">Contact</a>
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
             @foreach ($socialLinks as $socialLink)

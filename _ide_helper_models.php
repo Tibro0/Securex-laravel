@@ -75,9 +75,19 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property string|null $key
+ * @property string|null $value
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|AllPage whereValue($value)
  */
 	class AllPage extends \Eloquent {}
 }
@@ -124,6 +134,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Category whereUpdatedAt($value)
  */
 	class Category extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ContactForm newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ContactForm newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|ContactForm query()
+ */
+	class ContactForm extends \Eloquent {}
 }
 
 namespace App\Models{

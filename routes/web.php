@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Frontend\FrontendContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\FrontendFreeQuoteFormController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +32,10 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 /** Free Quote Form Route */
 Route::post('free-quote-form', [FrontendFreeQuoteFormController::class, 'freeQuoteFormStore'])->name('free-quote-form.store');
+
+/** Contact Page Route */
+Route::get('/contact', [FrontendContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/store', [FrontendContactController::class, 'contactStore'])->name('contact.store');
 
 require __DIR__.'/auth.php';
 
