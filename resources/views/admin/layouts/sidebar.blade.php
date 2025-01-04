@@ -108,30 +108,38 @@
             </li>
 
             <li
-                class="dropdown {{ setSidebarActive(['admin.about-us.*', 'admin.service.*', 'admin.terms-and-condition.*', 'admin.support.*']) }}">
+                class="dropdown {{ setSidebarActive(['admin.about-us-page.*', 'admin.service.*', 'admin.terms-and-condition.*', 'admin.support.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file"></i>
                     <span>All Pages</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('admin.about-us.index') }}">About Us</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.service.index') }}">Services</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.terms-and-condition.index') }}">Terms And
+                    <li class="{{ setSidebarActive(['admin.about-us-page.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.about-us-page.index') }}">About Us</a></li>
+                    <li class="{{ setSidebarActive(['admin.service.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.service.index') }}">Services</a></li>
+                    <li class="{{ setSidebarActive(['admin.terms-and-condition.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.terms-and-condition.index') }}">Terms And
                             Condition</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.support.index') }}">Support</a></li>
+                    <li class="{{ setSidebarActive(['admin.support.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.support.index') }}">Support</a></li>
                 </ul>
             </li>
 
-            <li class="dropdown">
+            <li
+                class="dropdown {{ setSidebarActive(['admin.contact-form-message.*', 'admin.contact-form-page-description.*', 'admin.contact-form-page-map.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                         class="far fa-address-card"></i>
                     <span>Contact Form</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('admin.contact-form-message.index') }}">Contact Form
+                    <li class="{{ setSidebarActive(['admin.contact-form-message.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.contact-form-message.index') }}">Contact Form
                             Message</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.contact-form-page-description.index') }}">Contact
+                    <li class="{{ setSidebarActive(['admin.contact-form-page-description.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.contact-form-page-description.index') }}">Contact
                             Page
                             Description</a></li>
 
-                    <li><a class="nav-link" href="{{ route('admin.contact-form-page-map.index') }}">Contact
+                    <li class="{{ setSidebarActive(['admin.contact-form-page-map.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.contact-form-page-map.index') }}">Contact
                             Page
                             Map</a></li>
                 </ul>

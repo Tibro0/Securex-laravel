@@ -39,7 +39,7 @@ Route::resource('detail', DetailController::class);
 
 /** About Us route */
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
-Route::put('about-us/update', [AboutUsController::class, 'aboutUsUpdate'])->name('about-us.update');
+Route::put('about-us-update', [AboutUsController::class, 'aboutUsUpdate'])->name('about-us.update');
 
 /** Our Service route */
 Route::resource('our-service', OurServiceController::class);
@@ -85,7 +85,7 @@ Route::resource('footer-grid-three', FooterGridThreeController::class);
 Route::resource('social-link', SocialLinkController::class);
 
 /** About Us Page Content route */
-Route::get('about-us/index', [AllPageController::class, 'aboutUsIndex'])->name('about-us.index');
+Route::get('about-us/index', [AllPageController::class, 'aboutUsIndex'])->name('about-us-page.index');
 Route::put('about-us/update', [AllPageController::class, 'aboutUsPageUpdate'])->name('about-us-page.update');
 
 /** Service Page Content route */
