@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Frontend\FrontendAllPageController;
 use App\Http\Controllers\Frontend\FrontendContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\FrontendFreeQuoteFormController;
@@ -34,9 +35,15 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::post('free-quote-form', [FrontendFreeQuoteFormController::class, 'freeQuoteFormStore'])->name('free-quote-form.store');
 
 /** Contact Page Route */
-Route::get('/contact', [FrontendContactController::class, 'index'])->name('contact.index');
-Route::post('/contact/store', [FrontendContactController::class, 'contactStore'])->name('contact.store');
+Route::get('contact', [FrontendContactController::class, 'index'])->name('contact.index');
+Route::post('contact/store', [FrontendContactController::class, 'contactStore'])->name('contact.store');
 
+/** All Page Route */
+Route::get('about-us', [FrontendAllPageController::class, 'aboutUsIndex'])->name('about-us');
+Route::get('our-service', [FrontendAllPageController::class, 'ourServiceIndex'])->name('our-service');
+Route::get('terms-and-condition', [FrontendAllPageController::class, 'termsAndConditionIndex'])->name('terms-and-condition');
+
+Route::get('support', [FrontendAllPageController::class, 'supportIndex'])->name('Support');
 require __DIR__.'/auth.php';
 
 

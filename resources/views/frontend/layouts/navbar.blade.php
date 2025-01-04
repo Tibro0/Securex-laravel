@@ -1,6 +1,16 @@
 @php
     $socialLinks = App\Models\SocialLink::where('status', 1)->orderBy('id', 'DESC')->get();
     $footerGridOne = App\Models\FooterGridOne::first();
+
+    function menuActive(array $routes)
+    {
+        foreach ($routes as $route) {
+            if (request()->routeIs($route)) {
+                return 'active';
+            }
+        }
+        return '';
+    }
 @endphp
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center">
@@ -11,11 +21,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
-            <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Service</a>
-            <a href="project.html" class="nav-item nav-link">Project</a>
-            <a href="{{ route('contact.index') }}" class="nav-item nav-link">Contact</a>
+            <a href="{{ route('home') }}" class="nav-item nav-link {{ menuActive(['home']) }}">Home</a>
+            <a href="{{ route('about-us') }}" class="nav-item nav-link {{ menuActive(['about-us']) }}">About</a>
+            <a href="{{ route('our-service') }}" class="nav-item nav-link {{ menuActive(['our-service']) }}">Our
+                Service</a>
+            <a href="{{ route('contact.index') }}"
+                class="nav-item nav-link {{ menuActive(['contact.index']) }}">Contact</a>
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
             @foreach ($socialLinks as $socialLink)
