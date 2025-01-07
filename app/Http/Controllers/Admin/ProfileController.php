@@ -44,6 +44,14 @@ class ProfileController extends Controller
 
             toastr()->success('Updated Successfully');
             return redirect()->back();
+        }else{
+            $user = Auth::user();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->save();
+
+            toastr()->success('Updated Successfully');
+            return redirect()->back();
         }
 
     }
